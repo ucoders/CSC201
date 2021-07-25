@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Week 1 Content | Mingzhong Wang</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Week 1 Content" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CSC201 2021 Semester 2 Courseware." />
+<meta property="og:description" content="CSC201 2021 Semester 2 Courseware." />
+<link rel="canonical" href="/2021/Week_01.html" />
+<meta property="og:url" content="/2021/Week_01.html" />
+<meta property="og:site_name" content="Mingzhong Wang" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Week 1 Content" />
+<script type="application/ld+json">
+{"headline":"Week 1 Content","url":"/2021/Week_01.html","description":"CSC201 2021 Semester 2 Courseware.","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Mingzhong Wang" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Mingzhong Wang</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/2021/Week_01.html">Week 1 Content</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Week 1 Content</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="learning-outcomes">Learning outcomes</h1>
+<hr />
+<ol>
+  <li>Get familiar with the overall plan of the semester</li>
+  <li>Review the usage of Java</li>
+</ol>
+
+<h1 id="readings">Readings</h1>
+<hr />
+<ul>
+  <li>Chapter 1 &amp; 2 of the textbook</li>
+</ul>
+
+<h1 id="lecture-slides">Lecture slides</h1>
+<hr />
+<ul>
+  <li><a href="https://online.usc.edu.au/bbcswebdav/xid-15477061_2">L01 Introduction [PPTX]</a></li>
+</ul>
+
+<h1 id="workshop-java-practice">Workshop: Java Practice</h1>
+<hr />
+<h2 id="discussion">Discussion</h2>
+
+<ul>
+  <li>
+    <p><strong>[R-2.9]</strong> What are some potential efficiency disadvantages of having very deep inheritance trees, that is, a large set of classes, A, B, C, and so on, such that B extends A, C extends B, D extends C, etc.?</p>
+  </li>
+  <li>
+    <p><strong>[R-2.10]</strong> What are some potential efficiency disadvantages of having very shallow inheritance trees, that is, a large set of classes, A, B, C, and so on, such that all of these classes extend a single class, Z?</p>
+  </li>
+  <li>
+    <p><strong>[R-2.11]</strong> Consider the following code fragment, taken from some package:</p>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Maryland</span> <span class="kd">extends</span> <span class="nc">State</span> <span class="o">{</span>
+    <span class="nc">Maryland</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="cm">/* null constructor */</span> <span class="o">}</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMe</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Read it."</span><span class="o">);</span> <span class="o">}</span> 
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[</span> <span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Region</span> <span class="n">east</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">State</span><span class="o">(</span> <span class="o">);</span>
+        <span class="nc">State</span> <span class="n">md</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Maryland</span><span class="o">(</span> <span class="o">);</span>
+        <span class="nc">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Place</span><span class="o">(</span> <span class="o">);</span>
+        <span class="nc">Place</span> <span class="n">usa</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Region</span><span class="o">(</span> <span class="o">);</span>
+        <span class="n">md</span><span class="o">.</span><span class="na">printMe</span><span class="o">(</span> <span class="o">);</span>
+        <span class="n">east</span><span class="o">.</span><span class="na">printMe</span><span class="o">(</span> <span class="o">);</span>
+        <span class="o">((</span><span class="nc">Place</span><span class="o">)</span> <span class="n">obj</span><span class="o">).</span><span class="na">printMe</span><span class="o">(</span> <span class="o">);</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">md</span><span class="o">;</span>
+        <span class="o">((</span><span class="nc">Maryland</span><span class="o">)</span> <span class="n">obj</span><span class="o">).</span><span class="na">printMe</span><span class="o">(</span> <span class="o">);</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">usa</span><span class="o">;</span>
+        <span class="o">((</span><span class="nc">Place</span><span class="o">)</span> <span class="n">obj</span><span class="o">).</span><span class="na">printMe</span><span class="o">(</span> <span class="o">);</span>
+        <span class="n">usa</span> <span class="o">=</span> <span class="n">md</span><span class="o">;</span>
+        <span class="o">((</span><span class="nc">Place</span><span class="o">)</span> <span class="n">usa</span><span class="o">).</span><span class="na">printMe</span><span class="o">(</span> <span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">State</span> <span class="kd">extends</span> <span class="nc">Region</span> <span class="o">{</span>
+    <span class="nc">State</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="cm">/* null constructor */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMe</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ship it."</span><span class="o">);</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Region</span> <span class="kd">extends</span> <span class="nc">Place</span> <span class="o">{</span>
+    <span class="nc">Region</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="cm">/* null constructor */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMe</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Box it."</span><span class="o">);</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Place</span> <span class="kd">extends</span> <span class="nc">Object</span> <span class="o">{</span>
+    <span class="nc">Place</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="cm">/* null constructor */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMe</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Buy it."</span><span class="o">);</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>What is the output from calling the <code class="language-plaintext highlighter-rouge">main( )</code> method of the <code class="language-plaintext highlighter-rouge">Maryland</code> class?</p>
+
+<ul>
+  <li>
+    <p><strong>[R-2.13]</strong> Consider the following inheritance of classes:</p>
+
+    <ul>
+      <li>Class <code class="language-plaintext highlighter-rouge">Goat</code> extends <code class="language-plaintext highlighter-rouge">Object</code> and adds an instance variable <code class="language-plaintext highlighter-rouge">tail</code> and methods <code class="language-plaintext highlighter-rouge">milk( )</code> and <code class="language-plaintext highlighter-rouge">jump( )</code>.</li>
+      <li>Class <code class="language-plaintext highlighter-rouge">Pig</code> extends <code class="language-plaintext highlighter-rouge">Object</code> and adds an instance variable <code class="language-plaintext highlighter-rouge">nose</code> and methods <code class="language-plaintext highlighter-rouge">eat(food)</code> and <code class="language-plaintext highlighter-rouge">wallow( )</code>.</li>
+      <li>Class <code class="language-plaintext highlighter-rouge">Horse</code> extends <code class="language-plaintext highlighter-rouge">Object</code> and adds instance variables<code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">color</code>, and methods <code class="language-plaintext highlighter-rouge">run( )</code> and <code class="language-plaintext highlighter-rouge">jump( )</code>.</li>
+      <li>Class <code class="language-plaintext highlighter-rouge">Racer</code> extends <code class="language-plaintext highlighter-rouge">Horse</code> and adds a method <code class="language-plaintext highlighter-rouge">race( )</code>.</li>
+      <li>Class <code class="language-plaintext highlighter-rouge">Equestrian</code> extends <code class="language-plaintext highlighter-rouge">Horse</code> and adds instance variable <code class="language-plaintext highlighter-rouge">weight</code> and <code class="language-plaintext highlighter-rouge">isTrained</code>, and methods <code class="language-plaintext highlighter-rouge">trot( )</code> and <code class="language-plaintext highlighter-rouge">isTrained( )</code>.</li>
+    </ul>
+
+    <p>Let <code class="language-plaintext highlighter-rouge">d</code> be an object variable of type <code class="language-plaintext highlighter-rouge">Horse</code>. If <code class="language-plaintext highlighter-rouge">d</code> refers to an actual object of type <code class="language-plaintext highlighter-rouge">Equestrian</code>, can it be cast to the class <code class="language-plaintext highlighter-rouge">Racer</code>? Why or why not?</p>
+  </li>
+</ul>
+
+<h2 id="implementation">Implementation</h2>
+
+<ul>
+  <li>
+    <p><strong>[C-1.20]</strong>* Write a Java method that 1) creates an integer array of 100 items which are randomly selected between 1 and 1000, and 2) determines if all the numbers are different from each other (that is, they are distinct).</p>
+  </li>
+  <li>
+    <p><strong>[C-1.22]</strong> Write a short Java program that outputs all possible strings formed by using the characters ‘c’, ‘a’, ‘t’, ‘d’, ‘o’, and ‘g’ exactly once.</p>
+  </li>
+  <li>
+    <p><strong>[C-2.28]</strong> Write a set of Java classes that can simulate an Internet application in which one party, Alice, is periodically creating a set of packets that she wants to send to Bob. An Internet process is continually checking if Alice has any packets to send, and if so, it delivers them to Bob’s computer; Bob is periodically checking if his computer has a packet from Alice, and if so, he reads and deletes it.</p>
+  </li>
+  <li>
+    <p><strong>[P-2.35]</strong> Write a Java program that inputs a list of words, separated by whitespace, and outputs how many times each word appears in the list. You need not worry about efficiency at this point, however, as this topic is something that will be addressed later in this book.</p>
+  </li>
+</ul>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Mingzhong Wang</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Mingzhong Wang</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>CSC201 2021 Semester 2 Courseware.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
