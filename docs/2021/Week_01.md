@@ -16,12 +16,6 @@ title: Week 1 Content
 
 
 
-# Lecture slides
------
-*   [L01 Introduction [PPTX]](https://online.usc.edu.au/bbcswebdav/xid-15477061_2)
-
-
-
 # Workshop: Java Practice
 -----
 ## Discussion

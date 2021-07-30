@@ -30,7 +30,7 @@ title: Week 2 Content
 
 
 
-*   **[C-3.23]** Suppose you are designing a multiplayer game that has $n ≥ 1000$​​​​​ players, numbered `1` to `n`, interacting in an enchanted forest. The winner of this game is the first player who can meet all the other players at least once (ties are allowed). Assuming that there is a method `meet(i, j)`, which is called each time a player `i` meets a player `j` (with $i \neq j$), describe a way to keep track of the pairs of meeting players and who is the winner.
+*   **[C-3.23]** Suppose you are designing a multiplayer game that has $n ≥ 1000$​​​​​ players, numbered `1` to `n`, interacting in an enchanted forest. The winner of this game is the first player who can meet all the other players at least once (ties are allowed). Assuming that there is a method `meet(i, j)`, which is called each time a player `i` meets a player `j` (with $i \neq j$), describe a way to keep track of the pairs of meeting players and who is the winner.
 
 
 
@@ -44,8 +44,7 @@ title: Week 2 Content
 
 * **[R-4.8]** Order the following functions by asymptotic growth rate.
 
-1.   $4n\log n+2n$​​
-
+1.   $4n\log n+2n$​​​
 2.   $2^{10}$
 3.   $2^{\log n}$​
 4.   $3n+100\log n$​
@@ -57,7 +56,7 @@ title: Week 2 Content
 
 
 
-**Code Fragment 4.12**
+**Code Fragment 4.12** for Question R-4.9 to R-4.13. 
 
 ```java
 1 /∗∗ Returns the sum of the integers in given array. ∗/ 
@@ -135,16 +134,12 @@ title: Week 2 Content
 
 
 
-*   **[R-4.30]** Given an $n$-element array `X`, Algorithm `B` chooses $\log n$ elements in `X` at randoma nd executes an $O(n)$​-time calculation for each. What is the worst-case runningt ime of Algorithm `B`?
+*   **[R-4.30]** Given an $n$​-element array `X`, Algorithm `B` chooses $\log n$​ elements in `X` at randoma nd executes an $O(n)$​​-time calculation for each. What is the worst-case running time of Algorithm `B`?
 
 
 
 *   **[R-4.33]** Al and Bob are arguing about their algorithms. Al claims his $O(n\log n)$​-time method is always faster than Bob’s $O(n^2)$​-time method. To settle the issue, they perform a set of experiments. To Al’s dismay, they find that if $n < 100$, the
     $O(n^2)$-time algorithm runs faster, and only when $n \geq 100$ is the $O(n\log n)$-time one better. Explain how this is possible.
-
-
-
-*   **[C-4.36]** Describe an efficient algorithm for finding the ten largest elements in an array of size `n`. What is the running time of your algorithm?
 
 
 
@@ -155,6 +150,10 @@ title: Week 2 Content
 
 
 * **[C-3.22]** Write a method, `shuffle(A)`, that rearranges the elements of array `A` so that every possible ordering is equally likely. You may rely on the `nextInt(n)` method of the `java.util.Random` class, which returns a random number between `0` and `n-1` inclusive.
+
+
+
+*   **[C-4.36]** Describe an efficient algorithm for finding the ten largest elements in an array of size `n`. What is the running time of your algorithm?
 
 
 
