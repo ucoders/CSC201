@@ -4,20 +4,21 @@ title: Week 1 Content
 ---
 
 # Learning outcomes
------
+
 1.   Get familiar with the overall plan of the semester
 2.   Review the usage of Java
 
 
 
 # Readings
------
+
 *   Chapter 1 & 2 of the textbook
 
 
 
 # Workshop: Java Practice
------
+
+
 ## Discussion
 
 * **[R-2.9]** What are some potential efficiency disadvantages of having very deep inheritance trees, that is, a large set of classes, A, B, C, and so on, such that B extends A, C extends B, D extends C, etc.?
@@ -84,7 +85,7 @@ What is the output from calling the `main( )` method of the `Maryland` class?
 
     
 
-## Implementation
+##  Implementation
 
 * **[C-1.20]*** Write a Java method that 1) creates an integer array of 100 items which are randomly selected between 1 and 1000, and 2) determines if all the numbers are different from each other (that is, they are distinct).
 
