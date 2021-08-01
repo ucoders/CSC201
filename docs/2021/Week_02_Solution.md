@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 2 Workshop Solution
+title: Workshop 2 Solution
 ---
 
 

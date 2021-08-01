@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 1 Content
+title: CSC201 DSA
 ---
 
 # Learning outcomes
