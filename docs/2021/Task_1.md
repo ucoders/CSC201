@@ -32,6 +32,7 @@ An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 ```
 
 2.   All open-tags have matching ***close-tags***. E.g. `<from>Jani</from>`
+
 3.   XML tags are ***case sensitive***.
 
 ```xml
@@ -41,9 +42,11 @@ An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 ```
 
 4.   XML documents must have a ***single root*** element. All other tags are nested inside the root.
+
 5.   XML elements must be ***properly nested***. That is, children tags must close before the parent close tag. E.g. `<b><i>This text is bold and italic</i></b>`
 
 6.   XML attribute values must be ***quoted***. E.g. `<note date="12/11/2007"> … </note>`
+
 7.   Always use ***entity references*** to escape special characters. That is, use `&lt;` for `<`, `&gt;` for `>`, `&amp;` for `&`, `&apos;` for `'`, and `&quot;` for `"`. E.g.
 
 ```xml
