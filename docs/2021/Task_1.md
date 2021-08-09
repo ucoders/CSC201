@@ -27,9 +27,11 @@ An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 
 1.   Start with an ***XML declaration*** to indicate the version and encoding. E.g.
 
-```xml
-<?xml version="1.0" encoding=" UTF-8" ?>
-```
+​    
+
+    ```xml
+    <?xml version="1.0" encoding=" UTF-8" ?>
+    ```
 
 2.   All open-tags have matching ***close-tags***. E.g. `<from>Jani</from>`
 
