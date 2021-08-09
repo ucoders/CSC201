@@ -3,23 +3,7 @@ layout: page
 title: CSC201 DSA
 ---
 
-# Learning outcomes
-1.   Understand the concept of recursion and can apply recursive calls to solve simple problems
-2.   Understand and use Stack
-3.   Understand and use Queue
-4.   Explain the concept of deque
-
-
-
-# Readings
-
-*   Chapter 5 & 6 of the textbook
-
-
-
 # Workshop: Recusion, Stacks, and Queues
-
-
 
 ## Discussion
 
