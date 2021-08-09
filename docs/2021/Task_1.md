@@ -25,31 +25,29 @@ XML is merely a text-based data description, with information wrapped in tags. T
 
 An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 
-1.   Start with an ***XML declaration*** to indicate the version and encoding. E.g.
+#1. Start with an ***XML declaration*** to indicate the version and encoding. E.g.
 
-​    
-
-    ```xml
-    <?xml version="1.0" encoding=" UTF-8" ?>
-    ```
-
-2.   All open-tags have matching ***close-tags***. E.g. `<from>Jani</from>`
-
-3.   XML tags are ***case sensitive***.
+```xml
+<?xml version="1.0" encoding=" UTF-8" ?>
+```
     
-    ```xml
+#2.   All open-tags have matching ***close-tags***. E.g. `<from>Jani</from>`
+
+#3.   XML tags are ***case sensitive***.
+
+```xml
 <Message>This is incorrect</message>
 <message>This is correct</message>
 <Message>This is correct but a different tag</Message>
-    ```
+```
+    
+#4.   XML documents must have a ***single root*** element. All other tags are nested inside the root.
 
-4.   XML documents must have a ***single root*** element. All other tags are nested inside the root.
+#5.   XML elements must be ***properly nested***. That is, children tags must close before the parent close tag. E.g. `<b><i>This text is bold and italic</i></b>`
 
-5.   XML elements must be ***properly nested***. That is, children tags must close before the parent close tag. E.g. `<b><i>This text is bold and italic</i></b>`
+#6.   XML attribute values must be ***quoted***. E.g. `<note date="12/11/2007"> … </note>`
 
-6.   XML attribute values must be ***quoted***. E.g. `<note date="12/11/2007"> … </note>`
-
-7.   Always use ***entity references*** to escape special characters. That is, use `&lt;` for `<`, `&gt;` for `>`, `&amp;` for `&`, `&apos;` for `'`, and `&quot;` for `"`. E.g.
+#7.   Always use ***entity references*** to escape special characters. That is, use `&lt;` for `<`, `&gt;` for `>`, `&amp;` for `&`, `&apos;` for `'`, and `&quot;` for `"`. E.g.
 
 ```xml
 <message>if salary < 1000 then</message>     <!--- this is incorrect -->
@@ -57,7 +55,7 @@ An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 <message>if salary &lt; 1000 then</message>
 ```
 
-8.   XML comments must be place inside `<!-- … -->`. E.g.
+#8.   XML comments must be place inside `<!-- … -->`. E.g.
 
 ```xml
 <!-- This is a comment -->
