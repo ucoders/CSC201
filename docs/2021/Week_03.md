@@ -17,7 +17,7 @@ title: CSC201 DSA
 
 
 
-# Workshop: Recusion, Stacks, and Queues
+# Workshop: Recursion, Stacks, and Queues
 
 
 
