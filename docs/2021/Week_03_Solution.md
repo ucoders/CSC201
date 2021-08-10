@@ -58,7 +58,7 @@ fun move(n, source, target, temp) {
 
 The minimal number of moves required to solve a Tower of Hanoi puzzle is $2^n − 1$
 
-A good explanation to Hanoi puzzle can be found here: [https://www.youtube.com/watch?v=rf6uf3jNjbo]
+A good explanation to Hanoi puzzle can be found here: <https://www.youtube.com/watch?v=rf6uf3jNjbo>
 
 *   **[C-5.21]** Given an unsorted array, `A`, of integers and an integer `k`, describe a recursive algorithm for rearranging the elements in `A` so that all elements less than or equal to `k` come before any elements larger than `k`. What is the running time of your algorithm on an array of `n` values?
 
