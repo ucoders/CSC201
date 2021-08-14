@@ -30,7 +30,7 @@ An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 ```xml
 <?xml version="1.0" encoding=" UTF-8" ?>
 ```
-    
+
 #2.   All open-tags have matching ***close-tags***. E.g. `<from>Jani</from>`
 
 #3.   XML tags are ***case sensitive***.
@@ -40,7 +40,7 @@ An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 <message>This is correct</message>
 <Message>This is correct but a different tag</Message>
 ```
-    
+
 #4.   XML documents must have a ***single root*** element. All other tags are nested inside the root.
 
 #5.   XML elements must be ***properly nested***. That is, children tags must close before the parent close tag. E.g. `<b><i>This text is bold and italic</i></b>`
@@ -66,8 +66,11 @@ An XML document is ***Well Formed*** if it conforms to the syntax rules below.
 ## Task Deliverables
 
 1.   Source code, which implements an XML checker to verify if an XML document is well-formed, is committed and pushed to GitHub Classroom.
+2.   A report, which explains your solution, is submitted to the blackboard Task 1.
 
-*   A report, which explains your solution, is submitted to the blackboard Task 1.
+**GitHub Classroom entry**: <https://classroom.github.com/a/fypSX5DJ>
+
+*   Some test xml files are provided in the root folder of the starter repository.
 
 ## Task Requirements
 
