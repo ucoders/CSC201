@@ -25,7 +25,7 @@ title: CSC201 DSA
 
 *   **[R-9.3]** What does each `removeMin` call return within the following sequence of priority queue ADT operations: `insert(5, A), insert(4, B), insert(7, F), insert(1, D), removeMin( ), insert(3, J), insert(6, L), removeMin( ), removeMin( ), insert(8, G), removeMin( ), insert(2, H), removeMin( ), removeMin( )`?
 
-
+**Hint:** You're welcome to use this animated tool to trace the execution: [https://www.cs.usfca.edu/~galles/JavascriptVisual/Heap.html]
 
 
 
@@ -43,7 +43,7 @@ title: CSC201 DSA
 
 *   **[R-9.13]** Illustrate the execution of the in-place heap-sort algorithm on the following input sequence: (2, 5, 16, 4, 10, 23, 39, 18, 26, 15).
 
-**Hint:** Use a maximum-oriented heap.
+**Hint:** Use a maximum-oriented heap. You're welcome to use this animated tool to trace the execution: [https://visualgo.net/en/heap]
 
 
 
