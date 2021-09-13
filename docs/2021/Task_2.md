@@ -5,7 +5,7 @@ title: CSC201 DSA Task 2
 
 # Background
 
-Your company received a data set about the historical records of passenger flights between Australian airports. The schema of the table and a sample record is shown below.
+Your company received a data set about the historical records of passenger flights between Australian airports. The schema of the table and a sample record are shown below.
 
 | City1    | City2         | Month  | Passenger_Trips | Aircraft_Trips | Passenger_Load_Factor | Distance_GC_(km) | RPKs     | ASKs     | Seats | Year | Month_num |
 | -------- | ------------- | ------ | --------------- | -------------- | --------------------- | ---------------- | -------- | -------- | ----- | ---- | --------- |
@@ -18,10 +18,10 @@ The attributes of the data have the following patterns:
 *   `Aircraft_Trips` is the total number of flights between two cities.
 *   `Seats` represents the total number of available passenger seats for all flights in a given month between two cities.
 *   `Passenger_Trips` represents the sold number of passenger seats for all flights in a given month between two cities.
-*   `Passenger_Load_Factor` equals to $Passenger\_Trips/Seats$.
+*   `Passenger_Load_Factor` equals to `Passenger_Trips/Seats`.
 *   `Distance_GC_(km)` is great circle distance between two airports (connected to city).
-*   `ASKs` is Available Seat Kilometres. It equals to $Seats \times Distance\_GC\_(km)$.
-*   `RPKs` is Revenue Passenger Kilometres. It equals to $ASKs \times Passenger\_Load\_Factor$.
+*   `ASKs` is Available Seat Kilometres. It equals to `Seats * Distance\_GC\_(km)`.
+*   `RPKs` is Revenue Passenger Kilometres. It equals to `ASKs * Passenger_Load_Factor`.
 
 The data is available in the starter code once your initiate the project in the Gitub classroom. The original data source is from <https://data.gov.au/dataset/ds-dga-c5029f2a-39b3-4aef-8ae1-73e7962f6170>
 
