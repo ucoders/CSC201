@@ -18,27 +18,39 @@ title: CSC201 DSA
 
 # Workshop: Sorting and Selection
 
+
+
 ## Discussion
 
 *   **[R-12.18]** Is the bucket-sort algorithm in-place? Why or why not?
+
+**Solution:** No. Bucket-sort does not use a constant amount of additional storage. It uses $O(n+N)$ space.
 
 
 
 *   **[R-12.20]** Suppose `S` is a sequence of n values, each equal to 0 or 1. How long will it take to sort `S` with the merge-sort algorithm? What about quick-sort?
 
+**Solution:** Merge-sort takes $O(n\log n)$ time, as it is oblivious to the case when there are only two possible values. On the other hand, the way we have defined quick-sort with a three-way split implies that using quick-sort to sort `S` will take only $O(n)$ time.
+
 
 
 *   **[C-12.26]** Describe and analyze an efficient method for removing all duplicates from a collection `A` of n elements.
 
+**Solution:** First we sort the objects of `A`. Then we can walk through the sorted sequence and remove all duplicates. This takes $O(n\log n)$ time to sort and `n` time to remove the duplicates. Overall, therefore, this is an $O(n\log n)$-time method.
+
 
 
 *   **[C-12.35]** Suppose we are given an n-element sequence `S` such that each element in `S` represents a different vote for president, where each vote is given as an integer representing a particular candidate, yet the integers may be arbitrarily large (even if the number of candidates is not). Design an $O(n\log n)$-time algorithm to see who wins the election `S` represents, assuming the candidate with the most votes wins.
+
+**Solution:** Sort the votes, and then determine who received the maximum number of votes. First sort the sequence `S` by the candidate’s ID. Then walk through the sorted sequence, storing the current max count and the count of the current candidate ID as you go. When you move on to a new ID, check it against the current max and replace the max if necessary.
 
 
 
 *   **[C-12.36]** Consider the voting problem from Exercise C-12.35, but now suppose that we know the number $k < n$ of candidates running, even though the integer IDs for those candidates can be arbitrarily large. Describe an $O(n\log k)$-time algorithm for determining who wins the election.
 
 **Hint:** Think of a data structure that can be used for sorting in a way that only stores `k` elements when there are only `k` keys.
+**Solution:** In this case we can store candidate ID’s in a balanced search tree, such as an AVL tree, where in addition to each ID we store in this tree the number of votes that ID has received. Initially, all such counts are 0. Then, we traverse the sequence of votes, incrementing the count for the appropriate ID with each vote. Since this data structure stored k elements, each such search and update takes $O(\log k)$ time. Thus, the total time is $O(n\log k)$.
+
 
 
 ## Implementation
