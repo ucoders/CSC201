@@ -36,9 +36,11 @@ title: CSC201 DSA
 
 
 
-*   **[C-12.36]** Consider the voting problem from Exercise C-12.35, but now suppose that we know the number $k < n$ of candidates running, even though the integer IDs for those candidates can be arbitrarily large. Describe an $O(n\log k)$-time algorithm for determining who wins the election.
+*   **[C-12.49]** Bob has a set A of `n` nuts and a set B of `n` bolts, such that each nut in A has a unique matching bolt in B. Unfortunately, the nuts in A all look the same, and the bolts in B all look the same as well. The only kind of a comparison that Bob can make is to take a nut-bolt pair `(a,b)`, such that a is in A and `b` is in B, and test it to see if the threads of `a` are larger, smaller, or a perfect match with the threads of `b`. Describe and analyze an efficient algorithm for Bob to match up all of his nuts and bolts.
 
-**Hint:** Think of a data structure that can be used for sorting in a way that only stores `k` elements when there are only `k` keys.
+**Hint:** Try to design an efficient divide-and-conquer algorithm.
+
+
 
 ## Implementation
 

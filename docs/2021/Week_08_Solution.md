@@ -46,10 +46,10 @@ title: CSC201 DSA
 
 
 
-*   **[C-12.36]** Consider the voting problem from Exercise C-12.35, but now suppose that we know the number $k < n$ of candidates running, even though the integer IDs for those candidates can be arbitrarily large. Describe an $O(n\log k)$-time algorithm for determining who wins the election.
+*   **[C-12.49]** Bob has a set A of `n` nuts and a set B of `n` bolts, such that each nut in A has a unique matching bolt in B. Unfortunately, the nuts in A all look the same, and the bolts in B all look the same as well. The only kind of a comparison that Bob can make is to take a nut-bolt pair `(a,b)`, such that a is in A and `b` is in B, and test it to see if the threads of `a` are larger, smaller, or a perfect match with the threads of `b`. Describe and analyze an efficient algorithm for Bob to match up all of his nuts and bolts.
 
-**Hint:** Think of a data structure that can be used for sorting in a way that only stores `k` elements when there are only `k` keys.
-**Solution:** In this case we can store candidate ID’s in a balanced search tree, such as an AVL tree, where in addition to each ID we store in this tree the number of votes that ID has received. Initially, all such counts are 0. Then, we traverse the sequence of votes, incrementing the count for the appropriate ID with each vote. Since this data structure stored k elements, each such search and update takes $O(\log k)$ time. Thus, the total time is $O(n\log k)$.
+**Hint:** Try to design an efficient divide-and-conquer algorithm.
+**Solution:** This problem can be solved using a divide-and-conquer approach. First, we choose a random bolt and partition the remaining nuts around it. Then we take the nut that matches the chosen bolt and partition the remaining bolts around it. We can continue doing this until all the nuts and bolts are matched up. In essence, we are doing the randomized quicksort algorithm. Thus, we have an average running time of $O(nlog n)$.
 
 
 
@@ -60,3 +60,7 @@ title: CSC201 DSA
 
 
 * **[P-12.61]** Perform a series of benchmarking tests on a version of merge-sort and quick-sort to determine which one is faster. Your tests should include sequences that are “random” as well as “almost” sorted.
+
+
+
+*   **Task 2 assignment**.
