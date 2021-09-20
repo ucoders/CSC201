@@ -35,13 +35,11 @@ title: CSC201 DSA
 
 **Hint:** Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/CompressedTrie.html>
 
-**Hint:** Don’t forget to include the space character. Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/Huffman.html>
-
 
 
 *   **[R-13.11]** Draw the frequency array and Huffman tree for the following string: `"dogs do not spot hot pots or cats"`.
 
-**Hint:** Don’t forget to include the space character.
+**Hint:** Don’t forget to include the space character. Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/Huffman.html>
 
 
 
