@@ -22,12 +22,20 @@ title: CSC201 DSA
 
 *   **[R-13.4*]** Draw a figure illustrating the pattern matching for the text `"aaabaadaabaaa"` and pattern `"aabaaa"` done by the Boyer-Moore algorithm.
 
+**Solution:**
+
+<img src="src/solution_13.4.jpg" alt="solution" style="zoom:65%;" />
+
 
 
 *   **[R-13.8]** Draw a standard trie for the following set of strings: 
-    { abab, baba, ccccc, bbaaaa, caa, bbaacc, cbcc, cbca }.
+    { abab, baba, ccccc, bbaaaa, caa, bbacc, cbcc, cbca }.
 
 **Hint:** Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/Trie.html>
+
+**Solution:**
+
+<img src="src/solution_13.8.jpg" alt="solution" style="zoom:65%;" />
 
 
 
@@ -35,19 +43,23 @@ title: CSC201 DSA
 
 **Hint:** Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/CompressedTrie.html>
 
-**Hint:** Don’t forget to include the space character. Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/Huffman.html>
+**Solution:**
+
+<img src="src/solution_13.9.jpg" alt="solution" style="zoom:65%;" />
 
 
 
 *   **[R-13.11]** Draw the frequency array and Huffman tree for the following string: `"dogs do not spot hot pots or cats"`.
 
-**Hint:** Don’t forget to include the space character.
+**Hint:** Don’t forget to include the space character. Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/Huffman.html>
 
 
 
 *   **[C-13.39]** In the art gallery guarding problem we are given a line `L` that represents a long hallway in an art gallery. We are also given a set $X = {x_0,x_1, . . . ,x_{n−1}}$ of realn umbers that specify the positions of paintings in this hallway. Suppose that a single guard can protect all the paintings within distance at most 1 of his or her position (on both sides). Design an algorithm for finding a placement of guardst hat uses the minimum number of guards to guard all the paintings with positions in $X$.
 
 **Hint:** Use a greedy algorithm.
+
+**Solution:** We can use a greedy algorithm, which seeks to cover all the designated points on `L` with the fewest number of length-2 intervals (for such an interval is the distance one guard can protect). This greedy algorithm starts with $x_0$ and covers all the points that are within distance 2 of $x_0$. If $x_i$ is the next uncovered point, then we repeat this same covering step starting from $x_i$. We then repeat this process until we have covered all the points in $X$.
 
 
 
