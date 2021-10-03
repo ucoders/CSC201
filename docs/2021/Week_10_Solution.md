@@ -64,7 +64,9 @@ c. A BFS traversal starting at vertex 1 visits the vertices in the following ord
 **Solution:**
 
 a. The adjacency list structure is preferable. Indeed, the adjacency matrix structure wastes a lot of space. It allocates entries for 100,000,000 edges while the graph has only 20,000 edges.
+
 b. In general, both structures work well in this case. Regarding the space requirement, there is no clear winner. Note that the exact space usage of the two structures depends on the implementation details. The adjacency matrix structure is much better for operation `getEdge`, while the adjacency list structure is much better for operations `insertVertex` and `removeVertex`.
+
 c. The adjacency matrix structure is preferable. Indeed, it supports operation `getEdge` in $O(1)$ time, irrespectively of the number of vertices or edges.
 
 
