@@ -49,9 +49,12 @@ c. Give the sequence of vertices visited using a BFS traversal starting at verte
 
 
 *   **[R-14.11]** Would you use the adjacency matrix structure or the adjacency list structure in each of the following cases? Justify your choice.
-    a. The graph has 10,000 vertices and 20,000 edges, and it is important to use as little space as possible.
-    b. The graph has 10,000 vertices and 20,000,000 edges, and it is important to use as little space as possible.
-    c. You need to answer the query getEdge(u, v) as fast as possible, no matter how much space you use.
+
+a. The graph has 10,000 vertices and 20,000 edges, and it is important to use as little space as possible.
+
+b. The graph has 10,000 vertices and 20,000,000 edges, and it is important to use as little space as possible.
+
+c. You need to answer the query getEdge(u, v) as fast as possible, no matter how much space you use.
 
 
 
