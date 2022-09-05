@@ -89,9 +89,5 @@ If you are interest, play with the online animation tool: <https://visualgo.net/
 
 
 
-## Implementation
 
-* **[C-11.37]** Suppose we wish to support a new method `countRange(k1, k2)` that determines how many keys of a sorted map fall in the specified range. We could clearly implement this in $O(s + h)$ time by adapting our approach to `subMap`. Describe how to modify the search-tree structure to support $O(h)$ worst-case time for `countRange`.
-
-**Hint:** Note that this method returns a single integer, so it is not necessary to visit all s entries that lie in the range. You will need to extend the tree data structure, adding a new field to each node.
 
