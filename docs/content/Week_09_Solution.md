@@ -55,7 +55,7 @@ title: CSC201 DSA
 
 
 
-*   **[C-13.39]** In the art gallery guarding problem we are given a line `L` that represents a long hallway in an art gallery. We are also given a set $X = {x_0,x_1, . . . ,x_{n−1}}$ of realn umbers that specify the positions of paintings in this hallway. Suppose that a single guard can protect all the paintings within distance at most 1 of his or her position (on both sides). Design an algorithm for finding a placement of guardst hat uses the minimum number of guards to guard all the paintings with positions in $X$.
+*   **[C-13.39]** In the art gallery guarding problem we are given a line `L` that represents a long hallway in an art gallery. We are also given a set $X = {x_0,x_1, . . . ,x_{n−1}}$ of real numbers that specify the positions of paintings in this hallway. Suppose that a single guard can protect all the paintings within distance at most 1 of his or her position (on both sides). Design an algorithm for finding a placement of guards that uses the minimum number of guards to guard all the paintings with positions in $X$.
 
 **Hint:** Use a greedy algorithm.
 
