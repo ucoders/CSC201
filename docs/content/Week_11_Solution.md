@@ -58,7 +58,7 @@ Give 2 solutions to decide which bridges to build to minimize the total construc
 
 We use the same basic idea as in Dijkstra’s algorithm. We keep a variable d[v] associated with each vertex v that is the bandwidth on any path from `a` to this vertex. We initialize the d values of all vertices to $0$, except for the value of the source (the vertex corresponding to `a`) that is initialized to infinity. We also keep a $\pi$ value associated with each vertex (that contains the predecessor vertex).
 
-The basic subroutine will be very similar to the subroutine Relax in Dijkstra. Assume that we have an edge `(u,v)`. If $min\{d[u],w(u,v)\} > d[v]$ then wes should update $d[v]$ to $min\{d[u],w(u,v)\}$ (because the path from `a` to `u` and then to `v` has bandwidth $min\{d[u],w(u,v)\}$, which is more than the one we have currently).
+The basic subroutine will be very similar to the subroutine Relax in Dijkstra. Assume that we have an edge `(u,v)`. If $min \{ d[u],w(u,v) \} > d[v]$ then we should update $d[v]$ to $min \{ d[u],w(u,v) \} $ (because the path from `a` to `u` and then to `v` has bandwidth $min \{ d[u],w(u,v) \} $, which is more than the one we have currently).
 
 ```pseudocode
 Algorithm Max-Bandwidth(G,a,b)
