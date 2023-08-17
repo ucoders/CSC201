@@ -20,7 +20,7 @@ This Inventory Management System supports the following commands:
 3. `WRITEOFF <item_name> <quantity>`: Remove `<quantity>` of `<item_name>` from the inventory and the corresponding cost of acquiring these items are marked as loss. The items to be removed should be selected with this rule: the items added into the inventory earlier should be first selected.
 4. `DONATE <item_name> <quantity>`: Remove `<quantity>` of `<item_name>` from the inventory as a donation. We simply assume donations have no impact on the profit/loss calculation. The items to be removed should be selected with this rule: the items added into the inventory earlier should be first selected.
 5. `RETURN <item_name> <quantity> <price>`: Simulate the return of `<quantity>` of `<item_name>` that were sold at `<price>` each. To simply the simulation, the returned items will not be added back to the inventory for future reselling. It only cancels its corresponding selling profit but has no impact on the future inventory. If there are multiple sales at the same price, then the latest sales should be cancelled.
-6. `CHECK <item_name>`: Output the current quantity of `<item_name>`.
+6. `CHECK`: Output the current quantity of each item.
 7. `PROFIT`: Calculate and output the total profit or loss so far.
 
 ### 2.2 Input Format
@@ -29,11 +29,14 @@ The goal is to correctly calculate the profit for a history of operations.
 
 - The input will be a text file where each line represents a command.
 - The fields in a command are separated by a single space.
+- The second last command in the input file will always be `CHECK`.
 - The last command in the input file will always be `PROFIT`.
 
 ### 2.3 Output Format
 
-- The output should be a single line indicating the total profit or loss, formatted as `Profit/Loss: $<amount>`.
+- The output should contain the following content:
+  - First list the quantity of each item in the inventory line by line, formatted as `<item_name>: <quantity>`.
+  - Then a single line indicating the total profit or loss, formatted as `Profit/Loss: $<amount>`.
 - If the amount is positive, it represents a profit; if negative, it represents a loss.
 - If the processing encounter either of the following unexpected situations, output should be `Profit/Loss: NA`.
   - SELL/DONATE/WRITEOFF more items than the available quantity in the inventory, 
@@ -50,7 +53,7 @@ SELL Apple 50 1.50
 RETURN Apple 5 1.50
 DONATE Apple 5
 WRITEOFF Apple 2
-CHECK Apple
+CHECK
 PROFIT
 ```
 
@@ -61,7 +64,7 @@ Apple: 43
 Profit/Loss: $11.10
 ```
 
-`CHECK Apple` outputs 45 because: `SELL` deducts 50, `RETURN` does not change the inventory, `DONATE` deducts 5, and `WRITEOFF` deducts 2.
+`CHECK` outputs 45 Apple because: `SELL` deducts 50, `RETURN` does not change the inventory, `DONATE` deducts 5, and `WRITEOFF` deducts 2.
 
 The profit is $11.1 because:
 
