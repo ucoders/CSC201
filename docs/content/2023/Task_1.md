@@ -19,7 +19,7 @@ This Inventory Management System supports the following commands:
 2. `SELL <item_name> <quantity> <price>`: Sell `<quantity>` of `<item_name>` from the inventory at the given `<price>`. These sold items are chosen with this rule: the items added into the inventory earlier should be first selected.
 3. `WRITEOFF <item_name> <quantity>`: Remove `<quantity>` of `<item_name>` from the inventory and the corresponding cost of acquiring these items are marked as loss. The items to be removed should be selected with this rule: the items added into the inventory earlier should be first selected.
 4. `DONATE <item_name> <quantity>`: Remove `<quantity>` of `<item_name>` from the inventory as a donation. We simply assume donations have no impact on the profit/loss calculation. The items to be removed should be selected with this rule: the items added into the inventory earlier should be first selected.
-5. `RETURN <item_name> <quantity> <price>`: Simulate the return of `<quantity>` of `<item_name>` that were sold at `<price>` each. To simply the simulation, the returned items will not be added back to the inventory for future reselling. It only cancels its corresponding selling profit but has no impact on the future inventory. If there are multiple sales at the same price, then the latest sales should be cancelled.
+5. `RETURN <item_name> <quantity> <price>`: Simulate the return of `<quantity>` of `<item_name>` that were sold at `<price>` each. To simplify the simulation, the returned items will not be added back to the inventory for future reselling. It only cancels its corresponding selling profit but has no impact on the future inventory. <span style="color:red">If there are multiple sales of `<item_name>` at the same `<price>`, then the most recent sale should be the first to be cancelled. If no such sales record exists for the given `<item_name>` and `<price>`, or if the quantity in such a sales record is less than the `<quantity>` to be returned, then the output should be `Profit/Loss: NA`.</span>
 6. `CHECK`: Output the current quantity of each item.
 7. `PROFIT`: Calculate and output the total profit or loss so far.
 
@@ -40,8 +40,9 @@ The goal is to correctly calculate the profit for a history of operations.
 - If the amount is positive, it represents a profit; if negative, it represents a loss.
 - If the processing encounter either of the following unexpected situations, output should be `Profit/Loss: NA`.
   - SELL/DONATE/WRITEOFF more items than the available quantity in the inventory, 
-  - RETURN items that have never been sold,
+  - For RETURN commands, <span style="color:red">if no such sales record exists for the given `<item_name>` and `<price>`, or if the quantity in such a sales record is less than the `<quantity>` to be returned.</span>
   - SELL items at negative prices.
+  - If `Profit/Loss: NA`, there's no need to check the correctness of numbers of items.
 
 ### 2.4 An Example
 
