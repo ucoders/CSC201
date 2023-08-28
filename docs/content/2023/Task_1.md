@@ -21,7 +21,7 @@ This Inventory Management System supports the following commands:
 4. `DONATE <item_name> <quantity>`: Remove `<quantity>` of `<item_name>` from the inventory as a donation. We simply assume donations have no impact on the profit/loss calculation. The items to be removed should be selected with this rule: the items added into the inventory earlier should be first selected.
 5. `RETURN <item_name> <quantity> <price>`: Simulate the return of `<quantity>` of `<item_name>` that were sold at `<price>` each. To simplify the simulation, the returned items will not be added back to the inventory for future reselling. It only cancels its corresponding selling profit but has no impact on the future inventory. <span style="color:red">If there are multiple sales of `<item_name>` at the same `<price>`, then the most recent sale should be the first to be cancelled. If no such sales record exists for the given `<item_name>` and `<price>`, or if the quantity in such a sales record is less than the `<quantity>` to be returned, then the output should be `Profit/Loss: NA`.</span>
 6. `CHECK`: Output the current quantity of each item.
-7. `PROFIT`: Calculate and output the total profit or loss so far.
+7. `PROFIT`: Output the total profit or loss so far.
 
 ### 2.2 Input Format
 
@@ -104,5 +104,8 @@ The report should explain your solution with
 
 *    Key problem solving strategy and data structures, and
 *   *Time complexity* and *space complexity* analysis
+
+<span style="color:red">For the complexity analysis, please do at the command level. That is, please explain the complexity of each command.</span> E.g.
+`In my implementation, ADD has the complexity of O(n) where n is the quantity in the command. The reason is ...`
 
 A report template is provided in Task 1 on Canvas for your reference.
