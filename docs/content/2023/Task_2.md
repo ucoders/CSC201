@@ -34,7 +34,7 @@ $$
 
    ```
    * Read the data source file and calculate the average rating for each user.
-   * Output the average ratings into `Rating-Results.csv` in which each row includes 2 fields: UserID, average_rating. Please keep in mind this csv file should not be sorted by AverageRating.
+   * Output the average ratings into `Rating-Results.csv` in which each row includes 2 fields: UserID, average_rating. Please keep in mind this csv file should not be sorted by average_rating.
    ```
 
 2. **Sorting Algorithms**: Implement ***three different sorting algorithms*** to sort the data in `Rating-Results.csv` based on its `average_rating` field. Name each code file based on its sorting algorithm, such as `MergeSort.java`.
