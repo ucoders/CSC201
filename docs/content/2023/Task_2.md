@@ -15,7 +15,7 @@ The dataset for the assignment was Bitcoin OTC trust rating. One record/row repr
 
 
 
-The data is available in the starter code once your initiate the project in the Gitub classroom. The original data source is from <https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html>
+The data is available in the starter code once your initiate the project in the GitHub classroom. The original data source is from <https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html>
 
 The objective of this project is to develop a query system for these trust ratings. There are two key components are required. 
 
@@ -30,13 +30,23 @@ $$
 
 #### Requirements
 
-1. **Average Rating**: Implement an algorithm to compute the average rating for each user.
-2. **Sorting Algorithms**: Implement ***three different sorting algorithms*** to sort the dataset based on the calculated `average_rating`. Name each code file based on its sorting algorithm, such as `MergeSort.java`.
+1. **Average Rating**: Implement `RatingCounter.java` to compute the average rating for each user. This class needs to
+
+   ```
+   * Read the data source file and calculate the average rating for each user.
+   * Output the average ratings into `Rating-Results.csv` in which each row includes 2 fields: UserID, average_rating. Please keep in mind this csv file should not be sorted by AverageRating.
+   ```
+
+2. **Sorting Algorithms**: Implement ***three different sorting algorithms*** to sort the data in `Rating-Results.csv` based on its `average_rating` field. Name each code file based on its sorting algorithm, such as `MergeSort.java`.
+
 3. **Get Method**: Each sorting algorithm implementation should include a method `get(int rank)` that prints all member IDs with the given ranking order, and their average rating value. The ranking is based on `average_rating`.
    - `get(1)` should return the user(s) with the highest average rating and their average rating value.
    - `get(5)` should return the user(s) with the fifth-highest average rating and their average rating value.
+
 4. **No Ranking Gaps**: If there are multiple users with the same rank (e.g., two users with the highest average rating), the next rank should directly follow without a gap.
+
 5. **Precision**: All `average_rating` calculations should be represented as doubles and formatted to three decimal places in the output.
+
 6. **Report**: In the report, you need to outline:
    - Key problem solving strategy and data structures for the average rating algorithm and the chosen sorting algorithms.
    - The space and time complexity analysis for the average rating algorithm and the chosen sorting algorithms.
