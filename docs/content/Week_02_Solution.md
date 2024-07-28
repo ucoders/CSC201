@@ -41,7 +41,7 @@ private Node<E> middle( ) {
 	    throw new IllegalStateException("list must be nonempty");
     Node<E> middle = header -> next
     Node<E> partner = trailer -> prev;
-    while (middle != partner && middlee >next != partner) {
+    while (middle != partner && middlee ->next != partner) {
         middle = middle.getNext( );
         partner = partner.getPrev( );
     }
@@ -54,7 +54,7 @@ private Node<E> middle( ) {
 *   **[C-3.23]** Suppose you are designing a multiplayer game that has $n ≥ 1000$​​​​​ players, numbered `1` to `n`, interacting in an enchanted forest. The winner of this game is the first player who can meet all the other players at least once (ties are allowed). Assuming that there is a method `meet(i, j)`, which is called each time a player `i` meets a player `j` (with $i \neq j$), describe a way to keep track of the pairs of meeting players and who is the winner.
 
 **Hint:** You might want to consider using a two-dimensional array.
-**Solution:** Define an $(n + 1) × (n + 1)$​​​​​​​​​​​​​​​​ two-dimensional boolean array `M`, which will record the meeting pairs. So that `M[i, j] = true` if and only if player `i` and `j` have meet. In addition, define a one-dimensional integer array `c` of size $n+ 1$​​​​​​​​​​​ so that `c[i]` is a count of the number of other players that player `i` has met. When a player `i` and `j` meet, we check `M[i, j]`, and if it is true, then we are done—the players have already met. Otherwise, we set `M[i, j]` and `M[ j,i]` to true and we increment `c[i]` and
+**Solution:** Define an $(n + 1) × (n + 1)$​​​​​​​​​​​​​​​​ two-dimensional boolean array `M`, which will record the meeting pairs. So that `M[i, j] = true` if and only if player `i` and `j` have met. In addition, define a one-dimensional integer array `c` of size $n+ 1$​​​​​​​​​​​ so that `c[i]` is a count of the number of other players that player `i` has met. When a player `i` and `j` meet, we check `M[i, j]`, and if it is true, then we are done—the players have already met. Otherwise, we set `M[i, j]` and `M[ j,i]` to true and we increment `c[i]` and
 `c[j]`. If either `c[i]` or `c[j]` equals $n-1$ after this, then we have a winner.
 
 
@@ -100,7 +100,7 @@ public void reverse( ) {
 9.   $n\log n$​
 
 **Hint:** Simplify the expressions, and then use the ordering of the seven important algorithm-analysis functions to order this set.
-**Solution:** $2^{10}$ < $2\log n$ == $3n+100\log n$ < $4n$ < $n\log n$ == $4n\log n+2n$ < $n^2 +10n$ < $n^3$ < $2^n$
+**Solution:** $2^{10}$ < $2^{\log n}$ == $3n+100\log n$ == $4n$ < $n\log n$ == $4n\log n+2n$ < $n^2 +10n$ < $n^3$ < $2^n$
 
 
 
@@ -182,7 +182,7 @@ public void reverse( ) {
 
 **Hint:** The $O(\log n)$​ calculation is performed $n$ times.
 
-*   **[R-4.30]** Given an $n$-element array `X`, Algorithm `B` chooses $\log n$ elements in `X` at randoma nd executes an $O(n)$​-time calculation for each. What is the worst-case running time of Algorithm `B`?
+*   **[R-4.30]** Given an $n$-element array `X`, Algorithm `B` chooses $\log n$ elements in `X` at random and executes an $O(n)$​-time calculation for each. What is the worst-case running time of Algorithm `B`?
 
 **Hint:** The $O(n)$ calculation is performed $\log n$ times.
 
@@ -226,5 +226,5 @@ public int size( ) {
 *   **[C-4.36]** Describe an efficient algorithm for finding the ten largest elements in an array of size `n`. What is the running time of your algorithm?
 
 **Hint:** Note that 10 is a constant!
-**Solution:** Since 10 is a constant, we can solve this problem for any size array in $O(n)$ time. We can begin by looping to find the largeste lement, and then record the index of that element in an auxiliary array of size 10. Then we find the next largest element with another loop, makings ure to ignore the previously found element, and recording the index oft he second largest element. Each such loop requires $O(n)$ time; the time to check if an index has already been used can be done in $O(1)$ time as
+**Solution:** Since 10 is a constant, we can solve this problem for any size array in $O(n)$ time. We can begin by looping to find the largeste lement, and then record the index of that element in an auxiliary array of size 10. Then we find the next largest element with another loop, making sure to ignore the previously found element, and recording the index of the second largest element. Each such loop requires $O(n)$ time; the time to check if an index has already been used can be done in $O(1)$ time as
 there are $O(1)$ entries in the auxiliary array. Therefore the overall time is $O(10*n)$​ which is $O(n)$.
