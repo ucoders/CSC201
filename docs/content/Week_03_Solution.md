@@ -16,9 +16,9 @@ title: CSC201 DSA
 
 *   **[R-5.10]** Describe a way to use recursion to compute the sum of all the elements in an $n \times n$ (two-dimensional) array of integers.
 
-**Hint:** View the matrix as a collection of columns. Then you can use two recursive methods that look like Binary-Sum. E.g. Sum half of columns in 1 recursive call.
+**Hint:** View the matrix as a collection of rows. Then you can break it down row by row. The sum of the entire array is the sum of the first row plus the sum of the remaining rows. Use recursion to compute the sum of each row, then sum those results to get the total. This recursive approach simplifies the problem by reducing the two-dimensional array into a series of one-dimensional array sums, which are then added together to get the final sum.
 
-Alternatively, reduce n by 1 in each iteration with linear recursive method.
+Alternatively, view the matrix as a collection of columns.
 
 
 
