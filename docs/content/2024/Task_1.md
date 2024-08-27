@@ -68,22 +68,26 @@ After your program process this input file, it should output the following resul
 ```
 Drill: 9
 Saw: 3
-Profit/Loss: $92.50
+Profit/Loss: $127.50
 ```
 
 `CHECK` outputs 9 Drills because: `ADD` adds 10, `RENT` deducts 3, `RETURN` adds 2, `RETURN_DAMAGED` does not change the inventory as it in fact adds 1 back to the inventory but then discards it.
 
 Similary, `CHECK` outputs 3 Saws because: `ADD` adds 5, `RENT` deducts 2, `RETURN` adds 1, `DISCARD` deducts 1 from the inventory.
 
-The profit is $65 because:
+The profit is $127.5 because:
 
 `RETURN Drill 2 7` command gets profit [rentals + surcharge]: 2 * 5.0 * 7 + 0 = 70.00
 
-`RETURN Saw 1 15` command get profit [rentals + surcharge]: (1 * 7.0 * 10) + (1 * (7.0 * 50%) * (15-10) ) = 87.50
+~~`RETURN Saw 1 15` command get profit [rentals + surcharge]: (1 * 7.0 * 10) + (1 * (7.0 * 50%) * (15-10) ) = 87.50~~
+
+<span style="color:red">`RETURN Saw 1 15` command get profit [rentals + surcharge]: (1 * 7.0 * 15) + (1 * (7.0 * 50%) * (15-10) ) = 122.50</span> [updated on 27 Aug.]
 
 `RETURN_DAMAGED` command get profit [replacement_cost - acquisition_cost]: 1 * (60.0 - 50.0) = 10.00
 
 `DISCARD` command get profit [-acquisition_cost]: -75.0 = -75.0
+
+Adding these values up leads to $127.5
 
 ## 3. Task
 
