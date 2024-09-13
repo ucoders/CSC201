@@ -5,72 +5,130 @@ title: CSC201 DSA Task 2
 
 # Background
 
-Since Bitcoin users are anonymous, there is a need to maintain a record of users reputation to prevent transactions with fraudulent and risky users. People who trade using Bitcoin on a platform called Bitcoin OTC (http://www.bitcoin-otc.com/) rate other members in a scale of -10 (total distrust) to +10 (total trust) in steps of 1, resulting in a who-trusts-whom network. This is the first explicit weighted signed directed network available for research.
+Marvel Comics has a rich history of publishing iconic comic books since its early days as Timely Comics. The **Marvel Universe** is a vast, fictional shared universe where many of Marvel’s most famous stories unfold. It is home to legendary superhero teams such as the Avengers, the X-Men, the Fantastic Four, and the Guardians of the Galaxy, as well as countless individual superheroes. These characters often appear together in crossovers, forming intricate connections and relationships that span across various comic book titles, movies, and other media. This interconnected world is a hallmark of Marvel’s storytelling, creating a cohesive universe where heroes and villains interact in dynamic ways.
 
-The dataset for the assignment was Bitcoin OTC trust rating. One record/row represents a directed edge A->B which means user A rated on B with a score. For example, in the following record, user #6 rated user #2 with 4.
+In this assignment, you will work with a dataset derived from the **Marvel Universe Social Network**, where each node represents a Marvel hero, and an edge between two nodes indicates that the heroes appeared together in the same comic issue. Two data files are provided:
 
-| SOURCE | TARGET | Rating |
-| ------ | ------ | ------ |
-| 6      | 2      | 4      |
+*   `hero-network.csv`, which is the dataset we will work with. The dataset has been anonymised, and hero names are replaced with unique numeric IDs. Each row in the dataset consists of two IDs, representing a co-occurrence between the two corresponding heroes.
+*   `hero-network-ids.csv`, which shows the mapping between hero names and their IDs. This file is provided just for your curiosity about who is who.
 
+The hero network dataset is provided as a CSV file, where each row is in the format:
 
+```
+id1,id2
+```
 
-The data is available in the starter code once your initiate the project in the GitHub classroom. The original data source is from <https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html>
+This indicates that hero with `id1` and hero with `id2` appeared together in one Marvel comic issue.
 
-The objective of this project is to develop a query system for these trust ratings. There are two key components are required. 
+The data is available in the starter code once your initiate the project in the GitHub classroom. The original data source is from <https://www.kaggle.com/datasets/csanhueza/the-marvel-universe-social-network>
 
-### Component 1: Average Rating and Ranking Query
+The objective of this project is to develop a query system for the hero networks. There are three key components are required. 
 
-The primary goal of this component focuses on calculating and sorting `average_rating` for each member, allowing queries for ranking orders.
+### Task 1: Counting and Sorting Co-occurrences
 
-`average_rating` is an important measurement for the trustworthy of a member. The `average_rating` for a given member `i` is defined as:
-$$
-\text{Average Rating of i} = {\text{Sum of Ratings Received by i} \over \text{Total Number of Ratings Received by i}}
-$$
+#### 1.1 Remove Duplicated Records
 
-#### Requirements
+As a pair `id1,id2` represents the co-occurrence relation, its reverse pair `id2,id1` should be considered as equivalent. For the purpose of this project, we need to first remove duplicated records, including duplicated pairs and reverse pairs. 
 
-1. **Average Rating**: Implement `RatingCounter.java` to compute the average rating for each user. This class needs to
+*   Process `hero-network.csv` and remove all duplicated pairs and reverse pairs.
+*   Save the result into a CSV file named `hero-network-nodup.csv`.
 
-   ```
-   * Read the data source file and calculate the average rating for each user.
-   * Output the average ratings into `Rating-Results.csv` in which each row includes 2 fields: UserID, average_rating. Please keep in mind this csv file should not be sorted by average_rating.
-   ```
+#### 1.2 Count and Sort Heroes by Co-occurrences
 
-2. **Sorting Algorithms**: Implement ***three different sorting algorithms*** to sort the data in `Rating-Results.csv` based on its `average_rating` field. Name each code file based on its sorting algorithm, such as `MergeSort.java`.
+With the dataset without duplication, we can calculate the frequency of co-occurrences for heros. 
 
-3. **Get Method**: Each sorting algorithm implementation should include a method `get(int rank)` that prints all member IDs with the given ranking order, and their average rating value. The ranking is based on `average_rating`.
-   - `get(1)` should return the user(s) with the highest average rating and their average rating value.
-   - `get(5)` should return the user(s) with the fifth-highest average rating and their average rating value.
+-   Count how many times each hero (ID) co-appears with other heroes in the dataset `hero-network-nodup.csv`.
+-   Sort all heroes first by the count of their co-occurrences (in descending order), then by their ID (in ascending order).
+-   Save the sorted result into a CSV file named `sorted_heroes.csv`, with each record in the form of `id,count`, representing the hero with `id` co-appears with `count` other heroes.
 
-4. **No Ranking Gaps**: If there are multiple users with the same rank (e.g., two users with the highest average rating), the next rank should directly follow without a gap.
+#### 1.3 Query Co-occurrence Rank
 
-5. **Precision**: All `average_rating` calculations should be represented as doubles and formatted to three decimal places in the output.
+With the sorted co-occurrences, we can answer the queries about the popularity of heroes.
 
-6. **Report**: In the report, you need to outline:
-   - Key problem solving strategy and data structures for the average rating algorithm and the chosen sorting algorithms.
-   - The space and time complexity analysis for the average rating algorithm and the chosen sorting algorithms.
-   - In addition to the asymptotic analysis, you also need to report empirical comparison of them. That is, run each sorting algorithm 10 times and report the average execution time. Discuss any discrepancies between asymptotic and empirical analyses and provide explanations.
+-   Implement a function `void getRank(int n)` that prints all hero IDs with the $n^{th}$ highest number of co-occurrences.
+    -   Example: "Who has the 5th highest occurrence?"
 
 
-### Component 2: Directed Graph and Trust Path Analysis
-
-For this component, you will implement a graph-based query system. It supports a trust path query feature using Dijkstra's algorithm.
-
-When creating such a directed graph,  each node represents a user. Then, each record in the dataset actually defines a directed edge in the graph. For example, the record `user #6 rated user #2 with 4` is captured by a directed edge from node #6 to node #2, and the edge weight is 4. 
 
 #### Requirements
 
-1. **Graph Construction**: Build a directed graph where each node is a user. Ignore all records with negative ratings. That is, an edge from `SOURCE` to `TARGET` should be created only if the rating is non-negative (Dijkstra's algorithm requires all weights to be non-negative).
-2. **checkTrustPath Method**: Implement a function `checkTrustPath(sourceID, targetID)` that:
-   - Implements Dijkstra's algorithm to find the shortest trust path from the user with sourceID to targetID in the graph.
-   - Prints the total weight of the shortest trust path between the `sourceID` and `targetID` in the first row.
-   - Prints the path as a sequence of user IDs separated by commas (e.g., "1, 4, 7, 2").
-   - Outputs `"The user [sourceID] does not trust [targetID]."` if no eligible path can be found.
+1. **Source code file**: Implement all 3 subtasks in `CoOccurrence.java`. You can create auxilary classes, e.g. sorting algorithm implementation. But they'll be invoked in `CoOccurrence.java` to perform the tasks.
+
+2. **Get Method**: The method `getRank(int n)` first prints how many IDs are at this rank, and then prints all these IDs. 
+
+    - `get(1)` should print the total number and the user(s) with the highest co-occurrences.
+    - `get(5)` should print the total number and the user(s) with the fifth-highest co-occurrences.
+
+4. **No Ranking Gaps**: All ranks are incremental by 1. Even if there are multiple users with the same rank `k` (e.g., three users with the highest co-occurrences), the next rank should simply be `k+1` without a gap.
+
 4. **Report**: In the report, you need to outline:
-   - How you built the graph and what kind of data structure(s) is used to represent the graph.
-   - How Dijkstra's algorithm was implemented and used to find the shortest trust path.
-   - Time and space complexity of your graph construction and Dijkstra's algorithm implementation in Big-O notation.
+
+    - Key problem solving strategy and data structures for each task solution.
+    - The space and time complexity analysis for each task solution.
+
+    
+
+
+### Task 2: Graph Traversal and Degree of Separation
+
+Using the co-occurrence data `hero-network-nodup.csv`, construct a graph where each hero is a node, and an edge exists between two nodes if the corresponding heroes co-appeared in a comic.
+
+This task answers the queries about the Degree of Separation between two heroes.
+
+**Definition:** Degree of Separation between two heroes is the shortest number of edges (hops) connecting them in the graph.
+
+#### 2.1 Degree of Separation for Two Heroes
+
+With the graph constructed, we can answer the queries about the Degree of Separation between heroes.
+
+-   Implement a function `void getDegreeOfSeparation(int id1, int id2)` that prints the Degree of Separation between `id1` and `id2`.
+    -   If `id1 == id2`, the degree is 0.
+    -   If `id1` and `id2` are not reachable, the degree is -1.
+    -   Otherwise, it's a positive integer.
+
+#### 2.2 Nodes with a Given Degree of Separation
+
+With the graph constructed, we can also answer the queries about the heroes with a given Degree of Separation.
+
+*   Implement a function `void getHeroesOfDegree(int id, int degree)` that prints the total number of heroes that are exactly with `degree` separation away from `id`.
+
+
+
+#### Requirements
+
+1. **Source code file**: Implement both subtasks in `SeparationDegree.java`. You can create auxilary classes, but they'll be invoked in `SeparationDegree.java` to perform the tasks.
+
+2. **Report**: In the report, you need to outline:
+    - Key problem solving strategy and data structures for each task solution.
+    - The space and time complexity analysis for each task solution.
+
+
+
+
+### Task 3: Weighted Shortest Path
+
+In this task, you will assign a weight to each edge in the graph based on the properties of the connected nodes.
+
+*   **Definition:** The ***weight*** of an edge connecting `node1` and `node2` is defined as the minimum of the degrees (number of connections) of `node1` and `node2`. Beware the meaning of degree here is the number of edges connected to a node. It's different from "Degree of Separation". 
+
+#### 3.1 Shortest Path between Two Heroes
+
+With the weighted graph constructed, we can answer the queries about the shortest path between heroes.
+
+-   Implement a function `void getShortestPath(int id1, int id2)` that prints the shortest path between `id1` and `id2`. The output should include:
+    -   The total weight of the shortest path.
+    -   The length of the shortest path, which is the number of hops between them.
+    -   The sequence of node IDs along the path, separated by commas (e.g., "1, 4, 7, 2").
+    -   Outputs `"The heroes [id1] and [id2] are not reachable."` if no eligible path can be found.
+
+
+
+#### Requirements
+
+1. **Source code file**: Implement the task in `ShortestPath.java`. You can create auxilary classes, but they'll be invoked in `ShortestPath.java` to perform the task.
+4. **Report**: In the report, you need to outline:
+   - Key problem solving strategy and data structures for the task solution.
+   - The space and time complexity analysis for the task solution.
 
 
 
@@ -79,29 +137,19 @@ When creating such a directed graph,  each node represents a user. Then, each re
 
 ## Task Deliverables
 
-1.   Source code, which implements at least 4 java files, including 3 for sorting and 1 for graph, is committed and pushed to GitHub Classroom.
+1.   Source code, which implements at least 3 java files, is committed and pushed to GitHub Classroom.
 2.   A report of about 1,500 words, which explains your solution, is submitted to the Canvas Task 2.
 
-**GitHub Classroom entry**: <https://classroom.github.com/a/jJXjVMy6>
+**GitHub Classroom entry**: <https://classroom.github.com/a/aOfPNfEk>
 
 
 
-## Task Requirements
+## General Guideline
 
-### Code 
+### Code
 
-1.   Code should provide 3 different solutions to sort the records. Name each java file according to the sorting algorithm you use. 
-3.   For each algorithm, you can follow the examples of the textbook. However, you cannot just invoke an existing library or implementation.
-4.   Each code file should have a main method that can be easily revised to test the relevant methods.
-
-
+1.   For data structures, you can use existing implementations included in the standard Java, Kotlin, or Python SDK. Otherwise, you need to implement your own.
+2.   For algorithms, you need to implement your own. Your implementation may follow the examples in the textbook.
+3.   Each code file should have a main method that can be easily revised to test the relevant methods.
 
 
-### Report 
-
-The report should explain each algorithm with
-
-*    Key problem solving strategy and data structures
-*   *Time complexity* and *space complexity* analysis
-
-For three sorting algorithms, please also report the empirical analysis, and compare with the asymptotic analysis. After the analysis, make recommendations on which sorting algorithm should be used. 
