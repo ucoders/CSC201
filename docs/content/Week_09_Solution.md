@@ -31,7 +31,7 @@ title: CSC201 DSA
 *   **[R-13.8]** Draw a standard trie for the following set of strings: 
     { abab, baba, ccccc, bbaaaa, caa, bbacc, cbcc, cbca }.
 
-**Hint:** Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/Trie.html>
+**Hint:** Use the online animation: <https://cmps-people.ok.ubc.ca/ylucet/DS/Trie.html>
 
 **Solution:**
 
@@ -41,7 +41,7 @@ title: CSC201 DSA
 
 *   **[R-13.9]** Draw a compressed trie for the strings given in the previous problem.
 
-**Hint:** Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/CompressedTrie.html>
+**Hint:** Use the online animation: <https://cmps-people.ok.ubc.ca/ylucet/DS/CompressedTrie.html>
 
 **Solution:**
 
@@ -51,7 +51,7 @@ title: CSC201 DSA
 
 *   **[R-13.11]** Draw the frequency array and Huffman tree for the following string: `"dogs do not spot hot pots or cats"`.
 
-**Hint:** Don’t forget to include the space character. Use the online animation: <https://people.ok.ubc.ca/ylucet/DS/Huffman.html>
+**Hint:** Don’t forget to include the space character. Use the online animation: <https://cmps-people.ok.ubc.ca/ylucet/DS/Huffman.html>
 
 
 
