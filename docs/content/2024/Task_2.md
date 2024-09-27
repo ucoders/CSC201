@@ -188,6 +188,8 @@ Hero(es) include: [47]
 Rank 100: 1 hero(es) with 402 co-occurrence(s).
 Hero(es) include: [679]
 
+**Notes:** For the hero id list, the square brackets are optional. The examples simply print the ArrayList without any further refinement.
+
 **2.1 Degree of Separation between Two Heroes**
 
 `public void getDegreeOfSeparation(int id1, int id2)`
@@ -211,7 +213,6 @@ Degree of Separation between #4 and #53: 2
 
 `getDegreeOfSeparation(4, 5553)`:
 Degree of Separation between #4 and #5553: 3
-		
 
 **2.2 Nodes at a Given Degree of Separation**
 
@@ -223,8 +224,6 @@ Please use the following statement as the template for its output. In this templ
 System.out.printf("Total number of nodes with %d degree of separation from #%d: %d\n", degree, id, count);
 ```
 
-
-
 Some sample cases:
 
 `getHeroesOfDegree(1, 4)`:
@@ -234,8 +233,6 @@ Total number of nodes with 4 degree of separation from #1: 47
 
 `getHeroesOfDegree(100, 5)`:
 Total number of nodes with 5 degree of separation from #100: 0
-
-
 
 **3.1 Shortest Path between Two Heroes**
 
@@ -250,16 +247,18 @@ System.out.printf("Shortest Path between #%d and #%d has the total weight %d, wi
 System.out.println("Path: " + sPath.toString());
 ```
 
+Some sample cases:
+
 `shortestPath(4, 53)`:
-Shortest Path between 4 and 53 has the total weight 29, with 5 hops.
-Path: 4 49 6171 111 5531 53 
+Shortest Path between #4 and #53 has the total weight 29, with 5 hops.
+Path: [4, 49, 6171, 111, 5531, 53]
 
 `shortestPath(4, 573)`:
-Shortest Path between 4 and 573 has the total weight 31, with 3 hops.
-Path: 4 7 2413 573 
+Shortest Path between #4 and #573 has the total weight 31, with 3 hops.
+Path: [4, 7, 2413, 573]
 
 `shortestPath(4, 5553)`:
-Shortest Path between 4 and 5553 has the total weight 51, with 7 hops.
-Path: 4 49 6186 66 1936 206 6016 5553 
+Shortest Path between #4 and #5553 has the total weight 51, with 7 hops.
+Path: [4, 49, 6186, 66, 1936, 206, 6016, 5553]
 
-**Notes:** The shortest path is generally not unique. Therefore, your shortest path may have different hops and/or path sequence. They are also considered as correct.
+**Notes:** The shortest path is generally not unique. Therefore, your shortest path may have different hops and/or path sequence. They are also considered as correct. For the path list, the square brackets are optional. The examples simply print the ArrayList without any further refinement.
