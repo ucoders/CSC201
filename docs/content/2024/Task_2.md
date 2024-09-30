@@ -229,7 +229,9 @@ Some sample cases:
 `getHeroesOfDegree(1, 4)`:
 Total number of nodes with 4 degree of separation from #1: 47
 
-`getHeroesOfDegree(5, 4)`:
+`getHeroesOfDegree(5, 4)`: 
+
+Total number of nodes with 4 degree of separation from #5: 17
 
 `getHeroesOfDegree(100, 5)`:
 Total number of nodes with 5 degree of separation from #100: 0
@@ -249,15 +251,15 @@ System.out.println("Path: " + sPath.toString());
 
 Some sample cases:
 
-`shortestPath(4, 53)`:
+`getShortestPath(4, 53)`:
 Shortest Path between #4 and #53 has the total weight 29, with 5 hops.
 Path: [4, 49, 6171, 111, 5531, 53]
 
-`shortestPath(4, 573)`:
+`getShortestPath(4, 573)`:
 Shortest Path between #4 and #573 has the total weight 31, with 3 hops.
 Path: [4, 7, 2413, 573]
 
-`shortestPath(4, 5553)`:
+`getShortestPath(4, 5553)`:
 Shortest Path between #4 and #5553 has the total weight 51, with 7 hops.
 Path: [4, 49, 6186, 66, 1936, 206, 6016, 5553]
 
