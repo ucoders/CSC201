@@ -70,7 +70,7 @@ PROFIT
 After your program process this input file, it should output the following result:
 
 ```
-Apple: 9
+Apple: 5
 Peer: 20
 Profit/Loss: $74.00
 ```
