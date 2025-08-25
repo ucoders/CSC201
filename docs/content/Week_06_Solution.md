@@ -80,9 +80,3 @@ If you are interest, play with the online animation tool: <https://visualgo.net/
 **Hint:** Think first about how you can determine the number of 1’s in any row in $O(log n)$ time.
 **Solution:** To count the number of 1’s in `A`, we can do a binary search on each row of A to determine the position of the last 1 in that row. Then we can simply sum up these values to obtain the total number of 1’s in `A`. This takes $O(\log n)$ time to find the last 1 in each row. Done for each of the `n` rows, then this takes $O(n\log n)$ time.
 
-
-
-## Implementation
-
-* **Task 1**.
-

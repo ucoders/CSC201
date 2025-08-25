@@ -65,7 +65,3 @@ If you are interest, play with the online animation tool: <https://visualgo.net/
 
 
 
-## Implementation
-
-* **Task 1**.
-
